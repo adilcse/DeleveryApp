@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "799069840222",
+    "firebase_url": "https://med-life.firebaseio.com",
+    "project_id": "med-life",
+    "storage_bucket": "med-life.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799069840222:android:a59060dd92d9de0e",
+        "android_client_info": {
+          "package_name": "com.albatross.deleveryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799069840222-fmeo2krk8rthn93n9gm216j8vcth2qua.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.albatross.deleveryapp",
+            "certificate_hash": "9df9b7f9e541742ca2df7f7cc4f12ad871141bc5"
+          }
+        },
+        {
+          "client_id": "799069840222-7sct3idhlnk1pp5krh6ggf2l4trmirk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZzJF5q2G1RHpkpus_1EEdTx4gDn67dy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799069840222-7sct3idhlnk1pp5krh6ggf2l4trmirk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799069840222:android:9753bbb08084d7af",
+        "android_client_info": {
+          "package_name": "com.example.adil.medlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799069840222-i6e86dr0mv3gf107ggfoat4shniug212.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adil.medlife",
+            "certificate_hash": "9df9b7f9e541742ca2df7f7cc4f12ad871141bc5"
+          }
+        },
+        {
+          "client_id": "799069840222-02j3jh2sauso5k1c6scps0muf8utrou1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adil.medlife",
+            "certificate_hash": "bb327325cb80f35f090e4fd88c8572d9c8d398ff"
+          }
+        },
+        {
+          "client_id": "799069840222-7sct3idhlnk1pp5krh6ggf2l4trmirk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZzJF5q2G1RHpkpus_1EEdTx4gDn67dy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799069840222-7sct3idhlnk1pp5krh6ggf2l4trmirk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
