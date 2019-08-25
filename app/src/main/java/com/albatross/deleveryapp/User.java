@@ -3,6 +3,24 @@ package com.albatross.deleveryapp;
 public class User {
     private static String userName;
     private static String email;
+    private static String uid;
+    private static String userType;
+
+    public static String getUid() {
+        return uid;
+    }
+
+    public static void setUid(String uid) {
+        User.uid = uid;
+    }
+
+    public static String getUserType() {
+        return userType;
+    }
+
+    public static void setUserType(String userType) {
+        User.userType = userType;
+    }
 
     public static String getEmail() {
         return email;
@@ -20,4 +38,5 @@ public class User {
     public static void setUserName(String userName) {
         User.userName = userName;
     }
+
 }

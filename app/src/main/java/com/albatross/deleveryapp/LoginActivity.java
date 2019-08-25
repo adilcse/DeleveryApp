@@ -33,6 +33,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -132,9 +133,16 @@ public class LoginActivity extends Activity {
         mProgressView = findViewById(R.id.mprogressbar);
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
 
     private void signIn() {
-      //  showProgress(true);
+       showProgress(true);
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -153,15 +161,14 @@ public class LoginActivity extends Activity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
+                showProgress(false);
                 // ...
             }
         }
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Toast.makeText(mycontext, "firebase called",
-                Toast.LENGTH_SHORT).show();
-        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+
 
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -173,15 +180,13 @@ public class LoginActivity extends Activity {
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            Toast.makeText(mycontext, "welcome "+user.getDisplayName(),
-                                    Toast.LENGTH_SHORT).show();
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Snackbar.make(findViewById(R.id.loginhome), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                             updateUI(null);
-                            Toast.makeText(mycontext, "Login Failed",
-                                    Toast.LENGTH_SHORT).show();
+
                         }
                         showProgress(false);
 
@@ -316,10 +321,16 @@ public class LoginActivity extends Activity {
      * the user.
      */
 
-    private void updateUI(FirebaseUser user){
+        private void updateUI(FirebaseUser user){
         if(user!=null){
             User.setUserName(user.getDisplayName());
             User.setEmail(user.getEmail());
+            Toast.makeText(mycontext, "welcome "+user.getDisplayName(),
+                    Toast.LENGTH_SHORT).show();
+            Intent mIntent = new Intent(mycontext,HomeActivity.class);
+            finishAffinity();
+            startActivity(mIntent);
+
         }
 
 
