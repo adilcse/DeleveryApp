@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
@@ -29,6 +31,7 @@ public class ForgotPassword extends Activity {
     CardView forgetPasswordButton ;
     FirebaseAuth auth;
     ImageView backReset;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +40,11 @@ public class ForgotPassword extends Activity {
         forgetPasswordButton = (CardView)findViewById(R.id.forgetPasswordButton);
         auth = FirebaseAuth.getInstance();
         backReset = findViewById(R.id.resetBackButton);
+
         backReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent = new Intent(getApplicationContext(),LoginActivity.class);
-                finishAffinity();
-                startActivity(mIntent);
+               finish();
             }
         });
         forgetPasswordButton.setOnClickListener(new View.OnClickListener() {
