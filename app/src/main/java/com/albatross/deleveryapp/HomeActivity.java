@@ -1,7 +1,10 @@
 package com.albatross.deleveryapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Toast;
 
@@ -10,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends Activity {
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         updateUI(currentUser);
     }
     public void signOut(View v){
-        Toast.makeText(getApplicationContext(), "logging out", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
         FirebaseAuth.getInstance().signOut();
         Intent mIntent = new Intent(getApplicationContext(),LoginActivity.class);
         finishAffinity();
@@ -48,5 +51,6 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+
 
 }
